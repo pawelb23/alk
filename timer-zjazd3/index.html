@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie Timer - zjazd III</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <!--    TIMER   -->
+    <section>
+
+        <div id="timer-container">
+
+            <h2 id="timer-name">Timer</h2>
+
+            <form name="timer">
+
+                <div id="flexbox-container">
+
+                    <label for="min" class="label-minutes">Minutes<input id="min" name="minutes" class="time" type="number"></label>
+
+
+
+                    <label for="sec" class="label-items">Seconds<input id="sec" name="seconds" class="time" type="number" min="0" max="59"></label>
+
+
+
+                    <input class="start-stop" type="submit" value="start">
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

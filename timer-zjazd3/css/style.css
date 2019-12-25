@@ -1,0 +1,86 @@
+* {
+
+    font-family: monospace;
+    text-transform: capitalize;
+    box-sizing: border-box;
+
+}
+
+body {
+
+    background-color: rgba(48, 81, 155, 0.7);
+
+}
+
+#timer-container {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    padding: 10px;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(95, 195, 195, 0.7);
+    border-radius: 10px;
+    border: 5px solid black;
+
+}
+
+#timer-name {
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 15px;
+
+}
+
+#flexbox-container {
+
+    width: auto;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.time {
+
+    font-size: 20px;
+    padding-left: 10px;
+
+}
+
+
+.label-minutes {
+
+    margin-left: 25px;
+
+}
+
+.time,
+.start-stop {
+
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    width: 90px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+
+}
+
+.start-stop {
+
+    background-color: #a8e24d;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-right: 25px;
+    margin-left: 15px;
+
+}

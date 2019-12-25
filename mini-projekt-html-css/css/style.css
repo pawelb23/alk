@@ -1,0 +1,147 @@
+/* Ustawienia początkowe */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    margin: 0;
+    /*     margin: 0 auto;*/
+    font-size: 16px;
+    /*        font-size: 16px; -warto dodać w każdym projekcie, żeby być pewnym, że nikt nic nie pozmieniał */
+    font-family: 'Mansalva', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(54, 28, 28);
+}
+
+
+/* Container */
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    border: 2px solid darkgrey;
+    border-radius: 5px;
+}
+
+
+/* Header stylowanie */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+
+/* Brand */
+
+.brand a,
+.brand img {
+    display: block;
+}
+
+
+/* Menu */
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0px 3px;
+}
+
+nav a {
+    color: black;
+    padding: 10px 15px;
+    font-size: 18px;
+    display: block;
+}
+
+nav a:hover {
+    background: black;
+    color: white;
+}
+
+
+/* Slider */
+
+.slider img {
+    display: block;
+}
+
+
+/* Main */
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Article */
+
+article {
+    width: 70%;
+    padding: 30px;
+}
+
+
+/* Aside */
+
+aside {
+    width: 30%;
+    padding: 20px;
+    background-color: lightgrey;
+    border-left: 1px solid grey;
+}
+
+.widget {
+    margin-bottom: 50px;
+}
+
+.widget img {
+    float: left;
+    margin: 0 12px 15px 0;
+}
+
+.widget ul {
+    list-style: square;
+    padding: 0 0 0 15px;
+}
+
+.widget h3 {
+    text-align: center;
+}
+
+.widget ul li {
+    margin-bottom: 10px;
+    /* border: 1px solid green;
+    padding: 5px; */
+}
+
+footer {
+    background-color: rgba(126, 139, 136, 0.336);
+    text-align: center;
+    border: 1px solid rgba(105, 91, 91, 0.322);
+    padding: 30px 25px;
+}
+
+footer p {
+    margin: 0;
+}
