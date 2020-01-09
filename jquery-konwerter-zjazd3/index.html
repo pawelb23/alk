@@ -12,21 +12,51 @@
 
     <section>
 
-        <h2>Converter</h2>
-
         <form class="converter">
 
-            <label for="t1">Celsius</label>
+            <div id="master-container">
 
-            <input id="t1" name="temp1" type="number" required>
+                <h2>Converter</h2>
 
-            <input type="submit" value="⇆">
+                <div id="place-one" class="inline-class switching-dblclick">
 
-            <label for="t2">Fahrenheit</label>
+                    <div class="celsius-div inline-class">
 
-            <input id="t2" name="temp2" type="number" required>
+                        <label for="t1">Celsius</label>
+
+                        <input id="t1" class="first-position" name="temp1" type="number" step="any">
+
+                    </div>
+
+                </div>
+
+                <input type="submit" value="⇆">
+
+                <div id="place-two" class="inline-class switching-dblclick">
+
+                    <div class="fahrenheit-div inline-class">
+
+                        <label for="t2">Fahrenheit</label>
+
+                        <input id="t2" class="first-position" name="temp2" type="number" step="any" disabled="true">
+                        <!-- step="0.1" pozwala określić ilość miejsc po przecinku-->
+                        <!--       step="any" pozwala podać każdą wartość, a po naciśnięciu strzałki wartości przesuwają się o jeden-->
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </form>
+
+
+        <div id="code-key">
+
+            <!--Input potrzebny do szukania kodu znaków na klawiaturze-->
+            <input id="searchingForLetter" name="letterSearch">
+
+        </div>
 
     </section>
 

@@ -6,7 +6,7 @@ var newsletterForm = $('.newsletter');
 
 var userName = $(newsletterForm.find('input').eq(0)); //--- tak używamy w Jquery
 
-//var userName = $(newsletterForm.user); // sprawdzić w konsoli co się dziej
+//var userName = $(newsletterForm.user); // sprawdzić w konsoli co się dzieje
 
 var userEmail = $(newsletterForm.find('input').eq(1)); //--- tak używamy w Jquery
 
