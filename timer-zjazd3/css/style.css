@@ -23,9 +23,10 @@ body {
     padding: 10px;
     width: 400px;
     height: 200px;
-    background-color: rgb(95, 195, 195, 0.7);
+    background-color: rgba(95, 195, 195, 0.7);
     border-radius: 10px;
     border: 5px solid black;
+    box-shadow: 5px 5px 10px;
 
 }
 
@@ -62,15 +63,34 @@ body {
 }
 
 .time,
+.start-stop,
+.reset {
+
+    width: 90px;
+    border: 2px solid black;
+    border-radius: 5px;
+
+}
+
+.time,
 .start-stop {
 
     padding-top: 3px;
     padding-right: 3px;
     padding-bottom: 3px;
-    width: 90px;
+    /*    width: 90px;*/
     height: 50px;
+    /*
     border: 2px solid black;
     border-radius: 5px;
+*/
+    box-shadow: 3px 3px 5px;
+
+}
+
+.start-stop:hover {
+
+    cursor: pointer;
 
 }
 
@@ -82,5 +102,16 @@ body {
     margin-top: 15px;
     margin-right: 25px;
     margin-left: 15px;
+
+}
+
+.reset {
+
+    position: absolute;
+    background-color: rgba(181, 28, 28, 0.9);
+    box-shadow: 1px 1px 2px;
+    width: 73px;
+    top: 35%;
+    right: 9%;
 
 }

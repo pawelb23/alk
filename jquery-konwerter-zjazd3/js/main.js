@@ -10,17 +10,17 @@ var submitToDblClick = converterForm.find('input[type="submit"]');
 
 console.log(submitToDblClick);
 
-//Funkcja potrzebna do szukania kodu znaków na klawiaturze
-$('#searchingForLetter').on({
-    'keypress': function (letterPush) {
-
-        //        console.log('działa');
-
-        console.log(letterPush.keyCode);
-
-    }
-
-});
+//Zdarzenie i funkcja potrzebne do szukania kodu znaków na klawiaturze
+//$('#searchingForLetter').on({
+//    'keypress': function (letterPush) {
+//
+//        //        console.log('działa');
+//
+//        console.log(letterPush.keyCode);
+//
+//    }
+//
+//});
 
 // con'keypress': function (keySign) {
 //    //
@@ -185,7 +185,7 @@ submitToDblClick.on({
             $('#place-two .fahrenheit-div').appendTo('#place-one');
 
             $('#t2').removeAttr('disabled', 'true');
-            
+
             temp2.val(parseFloat(temp2.val()).toFixed(0));
 
             masterDblClick.removeClass('switching-dblclick');
@@ -195,10 +195,10 @@ submitToDblClick.on({
             classForInput.addClass('second-position');
 
             submitToDblClick.css({
-                
+
                 'transform': 'rotate(180deg)',
                 'transition': 'all 0.5s'
-                
+
             })
 
         } else {
@@ -212,7 +212,7 @@ submitToDblClick.on({
             $('#place-two .celsius-div').appendTo('#place-one');
 
             $('#t2').attr('disabled', 'true');
-            
+
             temp1.val(parseFloat(temp1.val()).toFixed(0));
 
             masterDblClick.addClass('switching-dblclick');
@@ -222,12 +222,12 @@ submitToDblClick.on({
             classForInput.addClass('first-position');
 
             submitToDblClick.css({
-                
+
                 'transform': 'rotate(0deg)',
                 'transition': 'all 0.5s'
-                
-               
-                
+
+
+
             })
 
         }

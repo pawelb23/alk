@@ -1,12 +1,18 @@
 'use strict';
 
-console.log('Zadanie Timer');
+//console.log('Zadanie Timer');
 
 var timerForm = document.querySelector('form');
+
+var inputStartStop = document.querySelector('.start-stop');
+
+var buttonReset = document.querySelector('.reset');
 
 var minutes = timerForm.minutes;
 
 var seconds = timerForm.seconds;
+
+var intervalId;
 
 //console.log(minutes, seconds);
 
@@ -22,6 +28,8 @@ function countdown(event) {
 
     console.log('Odliczam...')
 
+    //    buttonReset.addEventListener('submit', resetStoper, false);
+
     minutes.setAttribute('disabled', true);
 
     seconds.setAttribute('disabled', true);
@@ -36,9 +44,11 @@ function countdown(event) {
 
     then.setMinutes(then.getMinutes() + m);
 
+    //    console.log(then.setMinutes(then.getMinutes() + m));
+
     then.setSeconds(then.getSeconds() + s);
 
-    var intervalId = setInterval(function tick() {
+    intervalId = setInterval(function tick() {
 
         var now = new Date();
 
@@ -53,9 +63,18 @@ function countdown(event) {
             minutes.value = minutesLeft;
 
             seconds.value = secondsLeft;
+            
+            if (secondsLeft === 60) {
+                              
+                seconds.value = '00';
+                minutes.value = minutesLeft + 1;
+                 
+            }
 
         } else {
 
+            seconds.value = 0;
+            
             minutes.removeAttribute('disabled');
 
             seconds.removeAttribute('disabled');
@@ -71,4 +90,27 @@ function countdown(event) {
 
 }
 
+function resetStoper(e) {
+
+    e.preventDefault();
+
+    console.log('działa');
+
+    minutes.value = 0;
+
+    seconds.value = 0;
+
+    minutes.removeAttribute('disabled');
+
+    seconds.removeAttribute('disabled');
+
+    timerForm.addEventListener('submit', countdown);
+
+    clearInterval(intervalId);
+
+}
+
+
 timerForm.addEventListener('submit', countdown);
+
+buttonReset.addEventListener('click', resetStoper);

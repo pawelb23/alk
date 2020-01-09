@@ -4,16 +4,6 @@ body {
 
 }
 
-/*Poboczny input*/
-#searchingForLetter {
-
-    display: block;
-    margin-top: 150px;
-    height: 25px;
-    width: 25px;
-
-}
-
 div.inline-class {
 
     display: inline;
@@ -63,6 +53,7 @@ input[type="submit"]:hover {
 
 }
 
+/*Próbny focus*/
 /*
 input[type="submit"]:focus {
     
@@ -101,10 +92,21 @@ h2 {
 }
 
 button {
-    
+
     position: absolute;
     top: 0;
     left: 0;
     margin: 10px;
-    
+
 }
+
+/* Poboczny input - potrzebny tylko do szukania kodu znaków na klawiaturze */
+/*
+#searchingForLetter {
+
+    display: block;
+    margin-top: 150px;
+    height: 25px;
+    width: 25px;
+
+}*/
