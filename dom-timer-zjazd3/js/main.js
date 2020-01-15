@@ -26,7 +26,7 @@ function countdown(event) {
 
     event.preventDefault();
 
-    console.log('Odliczam...')
+    //    console.log('Odliczam...')
 
     //    buttonReset.addEventListener('submit', resetStoper, false);
 
@@ -63,18 +63,20 @@ function countdown(event) {
             minutes.value = minutesLeft;
 
             seconds.value = secondsLeft;
-            
+
             if (secondsLeft === 60) {
-                              
+
                 seconds.value = '00';
                 minutes.value = minutesLeft + 1;
-                 
+
             }
 
         } else {
+            //koniec odliczania
+            minutes.value = 0;
 
             seconds.value = 0;
-            
+
             minutes.removeAttribute('disabled');
 
             seconds.removeAttribute('disabled');
@@ -90,11 +92,12 @@ function countdown(event) {
 
 }
 
+//Obsługa buttonu restart
 function resetStoper(e) {
 
     e.preventDefault();
 
-    console.log('działa');
+    //    console.log('działa');
 
     minutes.value = 0;
 
@@ -110,7 +113,22 @@ function resetStoper(e) {
 
 }
 
+//Blokada niepotrzebnych klawiszy              
+function switchOffKeys(keySign) {
+
+    if (keySign.keyCode === 43 || keySign.keyCode === 44 || keySign.keyCode === 45 || keySign.keyCode === 46 || keySign.keyCode === 101) {
+
+        keySign.preventDefault(); //preventDelault(); --- musi być tutaj, aby nie zablokować całej klawiatury
+
+        return false;
+
+    }
+
+}
+
 
 timerForm.addEventListener('submit', countdown);
 
 buttonReset.addEventListener('click', resetStoper);
+
+timerForm.addEventListener('keypress', switchOffKeys);

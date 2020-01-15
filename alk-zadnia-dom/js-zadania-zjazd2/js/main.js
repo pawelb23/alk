@@ -472,7 +472,7 @@ function secretNumber() {
 
                         alert("Szukana wartość to: " + secretRandomNumber);
 
-                    } else if (tryNumber <= 7) {
+                    } else if (tryNumber <= 5) {
 
                         alert("Brawo! Potrzebowałeś tylko: " + tryNumber + " prób by odgadnąć szukaną wartość");
 

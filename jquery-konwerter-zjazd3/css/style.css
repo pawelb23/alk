@@ -4,12 +4,20 @@ body {
 
 }
 
+#description ul li {
+
+/*    float: left;*/
+    /*    list-style: circle;*/
+    font-family: cursive, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
 div.inline-class {
 
     display: inline;
-
     padding: 0;
-
     margin: 0;
 
 }
@@ -25,8 +33,6 @@ label {
 
     margin: 10px;
     height: 1.5rem;
-    /*    font-size: 1rem;*/
-
 
 }
 
@@ -44,6 +50,7 @@ input[type="submit"] {
     border-radius: 3px;
     box-shadow: 3px 3px 3px;
     width: 2rem;
+    padding-bottom: 5px;
 
 }
 
@@ -52,17 +59,6 @@ input[type="submit"]:hover {
     cursor: pointer;
 
 }
-
-/*Próbny focus*/
-/*
-input[type="submit"]:focus {
-    
-    box-shadow: 3px 3px 3px;
-    transform: rotate(180deg);
-    transition: all 0.5s;
-
-}
-*/
 
 #master-container {
 
@@ -80,6 +76,13 @@ input[type="submit"]:focus {
     bottom: 0;
     right: 0;
     margin: auto;
+/*
+    position: relative;
+    bottom: 50%;
+    transform: translateY(50%);
+    margin: 0 auto;
+*/
+
 
 }
 
