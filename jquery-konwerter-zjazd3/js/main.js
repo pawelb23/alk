@@ -92,20 +92,26 @@ converterForm.on({
         var inputMinus = ($('input[type="number"]'));
 
         var inputActiveInput = inputMinus.eq(0).val();
-        
-        if (inputActiveInput == '0') {
 
-            //            console.log('000');
+        if (keySign.keyCode === 43 || keySign.keyCode === 44 || keySign.keyCode === 46 || keySign.keyCode === 101) {
+
+//            console.log('+=,.');
+
+            return false;
+
+        } else if (inputActiveInput == '0') {
+
+//            console.log('0');
 
             inputMinus.eq(0).val('');
 
             inputActiveInput += keySign;
 
         } else if (inputActiveInput === '') {
-            
+
             if (keySign.keyCode === 45) {
 
-//                            console.log('---');
+//                console.log('---');
 
                 inputMinus.eq(0).val('');
 
@@ -113,7 +119,7 @@ converterForm.on({
 
                 if (keySign.keyCode === 48) {
 
-//                    console.log('-0-0');
+                    //                    console.log('-0-0');
 
                     inputMinus.eq(0).val('');
 
@@ -121,11 +127,7 @@ converterForm.on({
 
                 }
 
-            } 
-
-        } else if (keySign.keyCode === 43 || keySign.keyCode === 44 || keySign.keyCode === 46 || keySign.keyCode === 101) {
-
-            return false;
+            }
 
         }
 
