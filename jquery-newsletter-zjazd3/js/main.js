@@ -4,13 +4,13 @@ console.log('działa');
 
 var newsletterForm = $('.newsletter');
 
-var userName = $(newsletterForm.find('input').eq(0)); //--- tak używamy w Jquery
+var userName = $(newsletterForm.find('input').eq(0)); //--- zapis Jquery
 
-//var userName = $(newsletterForm.user); // sprawdzić w konsoli co się dzieje
+//var userName = $(newsletterForm.user); // co w konsoli
 
-var userEmail = $(newsletterForm.find('input').eq(1)); //--- tak używamy w Jquery
+var userEmail = $(newsletterForm.find('input').eq(1)); //--- zapis Jquery
 
-//var userName = $(newsletterForm.email); // sprawdzić w konsoli co się dzieje
+//var userName = $(newsletterForm.email); // co w konsoli
 
 newsletterForm.on('submit', function (event) {
    
