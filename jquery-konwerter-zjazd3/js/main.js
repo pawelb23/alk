@@ -12,7 +12,7 @@ var minusEmpty = '';
 
 var submitToDblClick = converterForm.find('input[type="submit"]');
 
-//Zdarzenie i funkcja potrzebne do szukania kodu znaków na klawiaturze
+// --- Zdarzenie i funkcja potrzebne do szukania kodu znaków na klawiaturze ---
 //$('#searchingForLetter').on({
 //    'keypress': function (letterPush) {
 //

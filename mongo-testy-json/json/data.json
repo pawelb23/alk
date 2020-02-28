@@ -1,0 +1,80 @@
+{
+    "name": "iphone x",
+    "category": "phones",
+    "price": 2700,
+    "stock": 100,
+    "attributes": {
+        "os": "osx",
+        "memory": 8
+    }
+} {
+    "name": "samsung 7",
+    "category": "phones",
+    "price": 2200,
+    "stock": 10,
+    "attributes": {
+        "os": "Android",
+        "memory": 4
+    }
+} {
+    "name": "office",
+    "category": "software",
+    "price": 199,
+    "stock": 100,
+    "attributes": {
+        "os": "windows",
+        "licence": "enterprise"
+    }
+} {
+    "name": "sony vegas",
+    "category": "software",
+    "price": 1000,
+    "stock": 5000,
+    "attributes": {
+        "os": "osx",
+        "licence": "individual"
+    }
+} {
+    "name": "visual studio",
+    "category": "software",
+    "price": 4000,
+    "stock": 10000,
+    "attributes": {
+        "os": "windows",
+        "licence": "enterprise"
+    }
+} {
+    "name": "photoshop cc",
+    "category": "software",
+    "price": 60,
+    "stock": 1000,
+    "attributes": {
+        "os": "windows",
+        "licence": "enterprise"
+    }
+} {
+    "name": "magic keyboard",
+    "category": "accessories",
+    "price": 199,
+    "stock": 100,
+    "attributes": {
+        "type": "keyboard"
+    }
+} {
+    "name": "magic mouse",
+    "category": "accessories",
+    "price": 199,
+    "stock": 100,
+    "attributes": {
+        "type": "mouse"
+    }
+} {
+    "name": "imac",
+    "category": "displays",
+    "price": 2000,
+    "stock": 5,
+    "attributes": {
+        "size": 27,
+        "interface": "hdmi"
+    }
+}
