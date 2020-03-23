@@ -1,35 +1,33 @@
-'use strict';
+"use strict";
 
-//import css from './css/style.css';
+import css from "../css/style.css";
 
-import { sum } from './sum';
+import { sum } from "./sum";
 
-import {
-    generateSecret
-} from './secret.js.js'; //pojedyńcze funkcje
+import { generateSecret } from "./secret.js.js"; //pojedyńcze funkcje
 
-import * as allFile from './secret.js'; //wszystko importujemy --- nazwa po * as (tutaj allFile) jest nieistotna, ważne, abyśmy później wywołując jakieś dane ze wskazengo pliku posługiwali się tą właśnie nazwą i po kropce szukną daną ---> np. allFile.PINumber
+import * as allFile from "./secret.js"; //wszystko importujemy --- nazwa po * as (tutaj allFile) jest nieistotna, ważne, abyśmy później wywołując jakieś dane ze wskazengo pliku posługiwali się tą właśnie nazwą i po kropce szukną daną ---> np. allFile.PINumber
 
 // Write Javascript code!
-const appDiv = document.getElementById('app');
+const appDiv = document.getElementById("app");
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
 appDiv.innerHTML = generateSecret();
 
-const appDivTwo = document.getElementById('appTwo');
+const appDivTwo = document.getElementById("appTwo");
 appDivTwo.innerHTML = allFile.PINumber;
 
 // appDiv.innerHTML = `<h1>`allFile.PI`<h1>`;
 
 // appDiv.innerHTML = PI();
 
-console.log('Hello World!');
+console.log("Hello World!");
 
 console.log(allFile.PINumber);
 
 console.log(allFile.generateSecret());
 
-document.querySelector('div.sum-result').innerText = sum(2, 3);
+document.querySelector("div.sum-result").innerText = sum(2, 3);
 
 console.log(sum(2, 3));
 

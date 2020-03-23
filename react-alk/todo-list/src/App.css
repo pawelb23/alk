@@ -1,0 +1,11 @@
+.is-completed {
+  opacity: 0.5;
+}
+
+li .icon {
+  display: none;
+}
+
+li:hover .icon {
+  display: inline;
+}
