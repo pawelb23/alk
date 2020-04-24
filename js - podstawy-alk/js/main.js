@@ -1,9 +1,8 @@
-'use strict';
+"use strict";
 
 console.log("hello, elo!!!");
 
 var num = 2;
-
 
 //preinkrementacja ++num
 
@@ -34,22 +33,17 @@ var area = a * b;
 console.log(area);
 
 function add(a, b) {
-
-    return a + b;
-
+  return a + b;
 }
 
 console.log(add(12, 4));
 
 //========================
 
-
 function toFahrenheit(degC) {
+  var Fahrenheit;
 
-    var Fahrenheit;
-
-    return (degC * 9 / 5) + 32;
-
+  return (degC * 9) / 5 + 32;
 }
 
 console.log(toFahrenheit(-2));
@@ -57,11 +51,9 @@ console.log(toFahrenheit(-2));
 //=========================
 
 function toFahrenheitTwo(degCtwo) {
+  var degFtwo = (degCtwo * 9) / 5 + 32;
 
-    var degFtwo = (degCtwo * 9 / 5) + 32;
-
-    return degFtwo;
-
+  return degFtwo;
 }
 
 console.log(toFahrenheitTwo(-2));
@@ -76,19 +68,20 @@ var result = text.replace("alsda", ""); //replace
 
 console.log(result);
 
-
 var text1 = "asd alsda dagd gewwe";
 
 var text2 = "AFFDSFG ERWEG TDBE"; //konkatenacja
 
 var result1 = text1.concat(text2).concat("!!!");
 
-
 //łączenie kilku metod nazywa się czeining (chaining)
 
 console.log(result1);
 
-var result2 = text1.concat(text2).concat("!!!").substring(0, 3);
+var result2 = text1
+  .concat(text2)
+  .concat("!!!")
+  .substring(0, 3);
 
 console.log(result2);
 
@@ -100,7 +93,6 @@ var result4 = text.indexOf("l");
 
 console.log(result4);
 
-
 // camelCase
 // PascalCase
 
@@ -108,24 +100,21 @@ var woman = false;
 
 var title = woman ? "Pan" : "Pani";
 
-
 console.log(title);
-
 
 //===================
 
 //Ciąg znaków z np. użycie cudzysłowia " "
 
-var result = "He said: \"That's his cat.\"";
+var result = 'He said: "That\'s his cat."';
 
 console.log(result);
-
 
 //===================
 
 //Użycie \n
 
-var result = "Abc\nDef\nGhi"
+var result = "Abc\nDef\nGhi";
 
 console.log(result);
 
@@ -136,17 +125,15 @@ console.log(result);
 var sent = "At vero eos et accusamus";
 
 function shortQuote(str) {
+  var halfOfStr = str.substring(0, str.length / 2);
 
-    var halfOfStr = str.substring(0, str.length / 2);
+  var withEllipsis = halfOfStr + "...";
 
-    var withEllipsis = halfOfStr + "...";
+  var withQuotes = '"' + withEllipsis + '"';
 
-    var withQuotes = '"' + withEllipsis + '"';
+  var result = withQuotes;
 
-    var result = withQuotes;
-
-    return result;
-
+  return result;
 }
 
 console.log(shortQuote(sent));
@@ -190,74 +177,55 @@ console.log(result3);
 var sentence = "The cat is the cat problem";
 
 function countHits(text) {
+  var pattern = /cat/g; // szukamy takiej frazy cat - globalnie
 
-    var pattern = /cat/g; // szukamy takiej frazy cat - globalnie
+  var hits = text.match(pattern);
 
-    var hits = text.match(pattern);
+  console.log(hits);
 
-    console.log(hits);
-
-    return hits.length;
-
-    console.log(text.length);
-
+  return hits.length;
 }
 
-countHits(sentence);
+console.log(countHits(sentence));
+
+console.log(``);
 
 //==================
 
 //Ćwiczenie 6
 
 function isAdult(age) {
-
-    if (typeof age === "number") {
-
-        if (age >= 18) {
-
-            return true;
-
-        } else {
-
-            return false;
-        }
-
+  if (typeof age === "number") {
+    if (age >= 18) {
+      return true;
     } else {
-
-        console.log("Oops...");
-
-        return false;
-
+      return false;
     }
+  } else {
+    console.log("Oops...");
 
+    return false;
+  }
 }
 console.log(isAdult("abc"));
 
 //==================
 
-//Drugi sposób Ćwiczenie 6 
+//Drugi sposób Ćwiczenie 6
 
 function isAdult1(age1) {
+  if (typeof age1 === "number") {
+    return age1 >= 18;
+  } else {
+    console.log("Oopsaa...");
 
-    if (typeof age1 === "number") {
-
-        return age1 >= 18;
-
-
-    } else {
-
-        console.log("Oopsaa...");
-
-        return false;
-
-    }
-
+    return false;
+  }
 }
 
 console.log(isAdult1(17));
 
 //==================
-
 
 //Tablice
 
@@ -281,27 +249,27 @@ var otherArray = newString.split(" + ");
 
 console.log(otherArray);
 
+console.log(``);
+
 //==================
 
-//Ćwiczenie 7 
+//Ćwiczenie 7
 
-var arrayToEx = ['foo', 'bar'];
+var arrayToEx = ["foo", "bar"];
 
 var arrayToEx2 = [10, 20, 30, 40];
 
 var search = 2;
 
 function skip(n, array) {
-
-
-    return array.splice(n);
-
+  return array.splice(n);
 }
-
 
 var result = skip(2, [2, 4, 10, 16]);
 
 console.log(result);
+
+console.log(``);
 
 //==================
 
@@ -310,19 +278,15 @@ console.log(result);
 var allNumb = [1, 4, 5, 6, 8, 7];
 
 function addAll(array8) {
+  var total = 0;
 
-    var total = 0;
+  for (var i = 0; array8.length > i; i++) {
+    console.log(array8[i]);
 
-    for (var i = 0; array8.length > i; i++) {
+    total += array8[i];
+  }
 
-        console.log(array8[i]);
-
-        total += array8[i];
-
-    }
-
-    return total;
-
+  return total;
 }
 
 console.log(addAll(allNumb));
@@ -330,16 +294,18 @@ console.log(addAll(allNumb));
 // Ćwiczenie 8.
 
 function addAll(array) {
-    var total = 0;
+  var total = 0;
 
-    for (var i = 0; i < array.length; i++) {
-        total += array[i];
-    }
+  for (var i = 0; i < array.length; i++) {
+    total += array[i];
+  }
 
-    return total;
+  return total;
 }
 
 console.log(addAll([1, 2, 5]));
+
+console.log(``);
 
 //==================
 
@@ -349,81 +315,80 @@ console.log(addAll([1, 2, 5]));
 
 //===================
 
-//Ćwiczenie 9 
+//Ćwiczenie 9
 
 function toPairs(object) {
+  var pairs = [];
 
-    var pairs = [];
+  for (var key in object) {
+    // Stały zapis key (ale nazwę można zmienić na cokolwiek - np. abc) odnosi się do obiektu, który chcemy zbadać
+    //
+    //        key --- to "klucz"
+    //        a po dwukropku mamy "wartość"
+    //        czyli object = {
+    //
+    //            klucz : wartość
+    //            klucz : wartość
+    ////
+    //        }
 
-    for (var key in object) { // Stały zapis key (ale nazwę można zmienić na cokolwiek - np. abc) odnosi się do obiektu, który chcemy zbadać 
-        //        
-        //        key --- to "klucz"
-        //        a po dwukropku mamy "wartość"   
-        //        czyli object = {
-        //        
-        //            klucz : wartość
-        //            klucz : wartość
-        ////                
-        //        }
+    //
+    //console.log(key)
 
+    var value = object[key];
 
-        //        
-        //console.log(key)
+    pairs.push([key, value]);
+  }
 
-        var value = object[key];
-
-        pairs.push([key, value]);
-
-    }
-
-    return pairs;
-
+  return pairs;
 }
 
 var result = toPairs({
-    name: "John",
-    age: 44,
-    a: null,
-    b: undefined,
-    c() {
-
-        return 123;
-
-    }
-})
+  name: "John",
+  age: 44,
+  a: null,
+  b: undefined,
+  c() {
+    return 123;
+  }
+});
 
 console.log(result);
+
+console.log(``);
+
+// let objectZero = { one: 1, two: 2, three: 3 };
+
+// console.log(toPairs(objectZero));//tak też moglibyśmy wywołać powyższą funkcję
+
+// console.log(``);
 //=====================
 
 function User(name, age) {
-
-    this.name = name;
-    this.age = age;
-
+  this.name = name;
+  this.age = age;
 }
 
 var result = new User("James", 56);
 
 console.log(result);
 
-User.prototype.sayHello = function () {
-
-    console.log("I'm " + this.name + "!");
-
+User.prototype.sayHello = function() {
+  console.log("I'm " + this.name + "!");
 };
 
 var userHere = new User("Leon", 42);
 
 console.log(userHere.sayHello());
 
+console.log(``);
+
 //======================
 
 //Ćwiczenie 10
 
 function anotherNum() {
-
-    return this;
-
+  return this;
 }
 
 console.log(anotherNum());
@@ -437,6 +402,8 @@ var total = 20 + anotherNum();
 //w konsoli będzie 25
 console.log(total);
 
+console.log(``);
+
 //=======================
 
 //Napisz funkcję shuffle, która przyjmuje tablicę, a następnie zwraca nową tablicę z przemieszanymi elementami.
@@ -444,80 +411,68 @@ console.log(total);
 //Wykorzystaj Math.random()
 //
 
-
 //Math.floor(Math.random() * array.length);
 
 function shuffle(array) {
+  var a = array.slice(); // sprawia, że jest cała tablica zostaje zapisana i zabezpieczona przed kopiowaniem
 
-    var a = array.slice(); // sprawia, że jest cała tablica zostaje zapisana i zabezpieczona przed kopiowaniem
+  var b = [];
 
-    var b = [];
+  while (a.length > 0) {
+    var randomIndex = Math.floor(Math.random() * a.length);
 
-    while (a.length > 0) {
+    console.log(randomIndex);
 
-        var randomIndex = Math.floor(Math.random() * a.length);
+    var arrayItem = a[randomIndex];
 
-        console.log(randomIndex);
+    b.push(arrayItem);
 
-        var arrayItem = a[randomIndex];
+    console.log(b);
 
-        b.push(arrayItem);
+    a.splice(randomIndex, 1);
 
-        console.log(b);
+    console.log(a);
+  }
 
-        a.splice(randomIndex, 1);
-
-        console.log(a);
-
-    }
-
-    return b;
-
+  return b;
 }
 
 console.log(shuffle([12, 34, 56, 78]));
 
-//console.log(1)
+console.log(``);
 
 //============================
 
 //    //Ćwiczenie 11 / Chaining
 //
-var arrayPromise = ['c', 'a', 'b'];
+var arrayPromise = ["c", "a", "b"];
 
 function upperCaseAll(words) {
+  for (var i = 0; i < words.length; i++) {
+    words[i] = words[i].toUpperCase();
+  }
 
-    for (var i = 0; i < words.length; i++) {
-
-        words[i] = words[i].toUpperCase();
-
-    }
-
-    return Promise.resolve(words);
-
+  return Promise.resolve(words);
 }
 
 console.log(upperCaseAll(arrayPromise));
 
 function alphabetize(words) {
+  var alphabetizedWords = words.sort();
 
-    var alphabetizedWords = words.sort();
+  return Promise.resolve(alphabetizedWords);
+  //
+  //
 
-    return Promise.resolve(alphabetizedWords);
-    //        
-    //        
-
-    return Promise.resolve();
-
-
-
+  return Promise.resolve();
 }
 
 upperCaseAll(arrayPromise)
+  .then(alphabetize)
 
-    .then(alphabetize)
+  .then(console.log); // === odpowiedź bez adresu linii w console.log(3) ["A", "B", "C"]
 
-    .then(console.log); // === odpowiedź bez adresu linii w console.log(3) ["A", "B", "C"]
+console.log("");
 
 //==============================
 
@@ -525,29 +480,32 @@ upperCaseAll(arrayPromise)
 //
 console.log("111");
 
-setTimeout(function () {
-
-    console.log("222");
-
+setTimeout(function() {
+  console.log(``);
+  console.log("222");
 }, 1000);
 
 console.log("333");
+
+console.log(``);
 
 //==============================
 
 //JSON
 
 var ob = {
+  foo: undefined, //kiedy użyejmy JSON.stringify ---> ta wartość zostanie usunięta (ponieważ jest pusta)
 
-    foo: undefined,
+  bar: function() {}, //kiedy użyejmy JSON.stringify ---> ta wartość zostanie usunięta (ponieważ jest to pusta funkcja)
 
-    bar: function () {},
+  baz: [1, 2, 3, 4],
 
-    baz: [1, 2, 3, 4]
+  taz: "abc"
+};
 
-}
+// console.log(ob.bar);
 
-var stringified = JSON.stringify(ob);
+var stringified = JSON.stringify(ob); //zamieniamy obiekt 'ob' na obiekt JSON ---> puste wartości zostaną usunięte (u nas foo i bar) ---> tak ja to rozumiem
 
 console.log(stringified);
 
@@ -555,58 +513,53 @@ var object = JSON.parse(stringified);
 
 console.log(object);
 
+// console.log(object.baz[1]);
+
+// console.log(object.taz);
+
+console.log(``);
+
 //============================
 
 //fetch/Przykład
 
 fetch("https://jsonplaceholder.typicode.com/users")
+  .then(function(res) {
+    return res.json();
+  })
 
-    .then(function (res) {
+  .then(function(users) {
+    console.log(users);
+    // console.log(users[0].name);
+  })
 
-        return res.json();
+  .catch(function(err) {
+    console.error(err);
+  });
 
-    })
-
-    .then(function (users) {
-
-        console.log(users);
-
-    })
-
-    .catch(function (err) {
-
-        console.error(err);
-
-    });
+// console.log(``);
 
 //==============================
 
 //Ćwiczenie 12/Integracja z API
 
 fetch("https://jsonplaceholder.typicode.com/posts")
+  .then(function(res) {
+    return res.json();
+  })
 
-    .then(function (res) {
+  .then(function(posts) {
+    //    20 elementów --- od 0 do `19`
 
-        return res.json();
+    return posts.splice(0, 20);
+  })
 
-    })
+  .then(function(posts) {
+    for (var i = 0; i < posts.length; i++) {
+      console.log(posts[i].title);
+    }
+  });
 
-    .then(function (posts) {
-
-        //    20 elementów --- od 0 do `19`
-
-        return posts.splice(0, 20);
-
-    })
-
-    .then(function (posts) {
-
-        for (var i = 0; i < posts.length; i++) {
-
-            console.log(posts[i].title);
-
-        }
-
-    });
+// console.log(``);
 
 //============================
