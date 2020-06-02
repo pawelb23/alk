@@ -14,9 +14,7 @@ export const showRegistrationForm = () => {
   $("#div-registration").click((e) => {
     e.stopPropagation();
 
-    const divWall = shadowDiv;
-
-    $(".text-muted").after(divWall);
+    $(".text-muted").after(shadowDiv);
 
     const formRegistration = $(
       `<div class="div-form-registration"><form class="registration-form"><div id="logo"><span class="spa-logo">IT SPA</span></div><div class="all-input-container"><h1>Rejestracja</h1>
@@ -107,49 +105,69 @@ export const showRegistrationForm = () => {
 
         var emailValue = emailInput.val();
 
-        const registrationObject = {
-          login: loginValue,
-          password: passwordValue,
-          email: emailValue,
-        };
-
-        let registrationObjectStringify = JSON.stringify(registrationObject);
-
-        database.users.push(registrationObjectStringify);
-
-        cart.add(registrationObject);
-
-        console.log(registrationObject);
-
-        // var finished = () => {
-        //   console.log("działa");
-        // };
-
-        // var fs = require("fs");
-
-        // fs.appendFile(
-        //   "http://localhost:1234/database.json",
-        //   registrationObject,
-        //   finished()
-        // );
-
-        $(".div-form-registration").remove();
-        shadowDiv.remove();
-
-        console.log(registrationObject);
-
-        const loginInfo = $(
-          `<div class="nickname-login-info"><button class="remove-login">Wyloguj</button><span class="welcome-info">Witaj</span><span class="nickname-info">${loginValue}</span></div>`
+        const emailExistInfo = $(
+          `<span class="email-exist-info span-login-exist-info">*Podany email istnieje już w naszej bazie danych!!! Przejdź do zakładki logowania!!!</span>`
         );
-        $(".navbar").append(loginInfo);
 
-        loginRemove();
+        // console.log(emailValue);
+        for (let i = 0; database.users.length > i; i++) {
+          if (emailValue == database.users[i].email) {
+            if ($(".email-exist-info").hasClass("span-login-exist-info")) {
+              $(".email-exist-info").remove();
+              return $(".email-input").after(emailExistInfo);
+            } else {
+              return $(".email-input").after(emailExistInfo);
+            }
+          } else {
+            const registrationObject = {
+              login: loginValue,
+              password: passwordValue,
+              email: emailValue,
+            };
 
-        $("#div-registration").attr("disabled", true);
-        $("#div-login").attr("disabled", true);
+            // document.cookie = "name" + "=" + "login" + ";";
 
-        $("#div-registration").removeClass("hover-registration");
-        $("#div-login").removeClass("hover-login");
+            // let registrationObjectStringify = JSON.stringify(
+            //   registrationObject
+            // );
+
+            // database.users.push(registrationObjectStringify);
+
+            cart.add(registrationObject);
+
+            // console.log(registrationObject);
+
+            // var finished = () => {
+            //   console.log("działa");
+            // };
+
+            // var fs = require("fs");
+
+            // fs.appendFile(
+            //   "http://localhost:1234/database.json",
+            //   registrationObject,
+            //   finished()
+            // );
+
+            $(".div-form-registration").remove();
+            shadowDiv.remove();
+
+            const loginInfo = $(
+              `<div class="nickname-login-info"><button class="remove-login">Wyloguj</button><span class="welcome-info">Witaj</span><span class="nickname-info">${loginValue}</span></div>`
+            );
+            $(".navbar").append(loginInfo);
+
+            loginRemove();
+
+            $("#div-registration").attr("disabled", true);
+            $("#div-login").attr("disabled", true);
+
+            $("#div-registration").removeClass("hover-registration");
+            $("#div-login").removeClass("hover-login");
+
+            return;
+          }
+        }
       },
     });
 
@@ -157,7 +175,7 @@ export const showRegistrationForm = () => {
       keyup: function (keyPush) {
         //warto używać zdarzenia keyup --- najlepiej działa
 
-        var passwordValue = passwordInput.val();
+        // var passwordValue = passwordInput.val();
 
         if (keyPush) {
           checkPassword($(this).val()); //ten sam zapis --> checkPassword(passwordInput.val();

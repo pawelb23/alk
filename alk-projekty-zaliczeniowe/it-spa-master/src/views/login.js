@@ -7,11 +7,11 @@ const cart = new Cart(); //ciastko do logowania
 
 // Cookies Info
 
-const allCookiesInfo = JSON.parse(JSON.stringify(document.cookie));
+let allCookiesInfo = JSON.parse(JSON.stringify(document.cookie));
 
 // console.log(cookiesRoomsInfo);
 
-const cookieForLoginInfo = JSON.parse(allCookiesInfo.slice(12));
+let cookieForLoginInfo = JSON.parse(allCookiesInfo.slice(12));
 
 console.log(cookieForLoginInfo);
 
@@ -62,9 +62,7 @@ export const showLoginForm = () => {
   $("#div-login").click((e) => {
     e.stopPropagation();
 
-    const divWall = shadowDiv;
-
-    $(".text-muted").after(divWall);
+    $(".text-muted").after(shadowDiv);
 
     const formRegistration = $(
       `<div class="div-form-login"><form class="login-form"><div id="logo"><span class="spa-logo">IT SPA</span></div><div class="all-input-container"><h1>Logowanie</h1><span class="login-description">*Aby się zalogować podaj Hasło oraz Login lub E-mail</span>
@@ -124,17 +122,15 @@ export const showLoginForm = () => {
           ) {
             $(".div-form-login").remove();
             shadowDiv.remove();
-            console.log("działa");
 
             const loginInfo = $(
               `<div class="nickname-login-info"><button class="remove-login">Wyloguj</button><span class="welcome-info">Witaj</span><span class="nickname-info">${database.users[i].login}</span></div>`
             );
             $(".navbar").append(loginInfo);
 
-            loginRemove();
-
-            // loginCookie.add(database.users[i]);
             cart.add(database.users[i]);
+
+            loginRemove();
 
             $("#div-registration").attr("disabled", true);
             $("#div-login").attr("disabled", true);
@@ -166,9 +162,23 @@ export const hideLoginForm = () => {
   });
 };
 
+//----------
+
 export const loginRemove = () => {
   $(".remove-login").click((e) => {
     e.stopPropagation();
+
+    //Current Cookies Info
+
+    let allCurrentCookiesInfo = JSON.parse(JSON.stringify(document.cookie));
+
+    // console.log(cookiesRoomsInfo);
+
+    let currentcookieForRemoveLoginInfo = JSON.parse(
+      allCurrentCookiesInfo.slice(12)
+    );
+
+    //-----------
 
     $(".nickname-login-info").remove();
 
@@ -178,14 +188,14 @@ export const loginRemove = () => {
     $("#div-registration").addClass("hover-registration");
     $("#div-login").addClass("hover-login");
 
-    for (let i = 0; cookieForLoginInfo.length > i; i++) {
+    for (let i = 0; currentcookieForRemoveLoginInfo.length > i; i++) {
       if (
-        cookieForLoginInfo[i].hasOwnProperty("password") &&
-        cookieForLoginInfo[i].hasOwnProperty("login") &&
-        cookieForLoginInfo[i].hasOwnProperty("email")
+        currentcookieForRemoveLoginInfo[i].hasOwnProperty("password") &&
+        currentcookieForRemoveLoginInfo[i].hasOwnProperty("login") &&
+        currentcookieForRemoveLoginInfo[i].hasOwnProperty("email")
       ) {
-        cart.remove(cookieForLoginInfo[i]);
-        console.log("działa");
+        cart.remove(currentcookieForRemoveLoginInfo[i]);
+        // console.log(currentcookieForRemoveLoginInfo[i]);
       } else {
         ("");
       }

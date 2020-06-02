@@ -6,15 +6,23 @@ const cart = new Cart(); //uruchamiamy klasę kosz
 
 //-----------
 
-export let roomOneWithChanging = JSON.parse(JSON.stringify(database.rooms[0]));
+// let roomWithChanging = [];
 
-export let roomTwoWithChanging = JSON.parse(JSON.stringify(database.rooms[1]));
+// export const roomsInfo = () => {
+//   for (let i = 0; database.rooms.length > i; i++) {
+//     let roomWithChanging = JSON.parse(JSON.stringify(database.rooms[i]));
 
-export let roomThreeWithChanging = JSON.parse(
-  JSON.stringify(database.rooms[2])
-);
+//     console.log(roomWithChanging);
+//   }
+// };
 
-export let roomFourWithChanging = JSON.parse(JSON.stringify(database.rooms[3]));
+export let roomOneWithChanging = {};
+
+export let roomTwoWithChanging = {};
+
+export let roomThreeWithChanging = {};
+
+export let roomFourWithChanging = {};
 
 //-----------
 
@@ -32,20 +40,23 @@ const textInfoRoom4 = `Dodano: ${database.rooms[3].name}!!!`;
 
 // Cookies Rooms Info
 
-const cookiesRoomsInfo = JSON.parse(JSON.stringify(document.cookie));
+// const cookiesRoomsInfo = JSON.parse(JSON.stringify(document.cookie));
 
-const cookiesGusetsInfo = JSON.parse(cookiesRoomsInfo.slice(12));
+// const cookiesGusetsInfo = JSON.parse(cookiesRoomsInfo.slice(12));
 
 export const findCookieRoom1 = () => {
+  roomOneWithChanging = JSON.parse(JSON.stringify(database.rooms[0]));
+
+  const cookiesRoomsInfo = JSON.parse(JSON.stringify(document.cookie));
+
+  const cookiesGusetsInfo = JSON.parse(cookiesRoomsInfo.slice(12));
   for (let i = 0; cookiesGusetsInfo.length > i; i++) {
     if (
       cookiesGusetsInfo[i].id == 1 &&
       cookiesGusetsInfo[i].hasOwnProperty("guests")
     ) {
-      console.log("eejjj");
       roomOneWithChanging.guests =
         database.rooms[0].guests - cookiesGusetsInfo[i].guests;
-      console.log(roomOneWithChanging.guests);
     } else {
       ("");
     }
@@ -53,6 +64,11 @@ export const findCookieRoom1 = () => {
 };
 
 export const findCookieRoom2 = () => {
+  roomTwoWithChanging = JSON.parse(JSON.stringify(database.rooms[1]));
+
+  const cookiesRoomsInfo = JSON.parse(JSON.stringify(document.cookie));
+
+  const cookiesGusetsInfo = JSON.parse(cookiesRoomsInfo.slice(12));
   for (let i = 0; cookiesGusetsInfo.length > i; i++) {
     if (
       cookiesGusetsInfo[i].id == 2 &&
@@ -67,6 +83,11 @@ export const findCookieRoom2 = () => {
 };
 
 export const findCookieRoom3 = () => {
+  roomThreeWithChanging = JSON.parse(JSON.stringify(database.rooms[2]));
+
+  const cookiesRoomsInfo = JSON.parse(JSON.stringify(document.cookie));
+
+  const cookiesGusetsInfo = JSON.parse(cookiesRoomsInfo.slice(12));
   for (let i = 0; cookiesGusetsInfo.length > i; i++) {
     if (
       cookiesGusetsInfo[i].id == 3 &&
@@ -81,6 +102,11 @@ export const findCookieRoom3 = () => {
 };
 
 export const findCookieRoom4 = () => {
+  roomFourWithChanging = JSON.parse(JSON.stringify(database.rooms[3]));
+
+  const cookiesRoomsInfo = JSON.parse(JSON.stringify(document.cookie));
+
+  const cookiesGusetsInfo = JSON.parse(cookiesRoomsInfo.slice(12));
   for (let i = 0; cookiesGusetsInfo.length > i; i++) {
     if (
       cookiesGusetsInfo[i].id == 4 &&
@@ -105,9 +131,7 @@ export const roomId1Add = () => {
 
     $("#rooms-container div.room").removeClass("room-hover-shadow");
 
-    const divWall = shadowDiv;
-
-    $(".text-muted").after(divWall);
+    $(".text-muted").after(shadowDiv);
 
     $(".all-buttons").attr("disabled", "true");
 
@@ -132,9 +156,7 @@ export const roomId2Add = () => {
 
     $("#rooms-container div.room").removeClass("room-hover-shadow");
 
-    const divWall = shadowDiv;
-
-    $(".text-muted").after(divWall);
+    $(".text-muted").after(shadowDiv);
 
     $(".all-buttons").attr("disabled", "true");
 
@@ -159,9 +181,7 @@ export const roomId3Add = () => {
 
     $("#rooms-container div.room").removeClass("room-hover-shadow");
 
-    const divWall = shadowDiv;
-
-    $(".text-muted").after(divWall);
+    $(".text-muted").after(shadowDiv);
 
     $(".all-buttons").attr("disabled", "true");
 
@@ -186,9 +206,7 @@ export const roomId4Add = () => {
 
     $("#rooms-container div.room").removeClass("room-hover-shadow");
 
-    const divWall = shadowDiv;
-
-    $(".text-muted").after(divWall);
+    $(".text-muted").after(shadowDiv);
 
     $(".all-buttons").attr("disabled", "true");
 
@@ -223,9 +241,6 @@ const addInsideRoomAddId1 = () => {
 
     $(".div-for-info-rooms").addClass("hidden-border-rooms-in-info");
 
-    // if ($("#info-section").hasClass("info-section-information")) {
-    //   ("");
-    // } else
     if ($(".div-for-info-rooms div").hasClass("room1-cart-info")) {
       const roomOneWithGuestsInfoRemove = JSON.parse(
         JSON.stringify(database.rooms[0])
@@ -301,7 +316,7 @@ const addInsideRoomAddId1 = () => {
 
     cart.add(roomOneWithGuestsInfo);
 
-    console.log(document.cookie);
+    // console.log(document.cookie);
 
     $(".not-empty").remove();
     $(".shadow-div").remove();
@@ -320,9 +335,6 @@ const addInsideRoomAddId2 = () => {
 
     $(".div-for-info-rooms").addClass("hidden-border-rooms-in-info");
 
-    // if ($("#info-section").hasClass("info-section-information")) {
-    //   ("");
-    // } else
     if ($(".div-for-info-rooms div").hasClass("room2-cart-info")) {
       const roomTwoWithGuestsInfoRemove = JSON.parse(
         JSON.stringify(database.rooms[1])
@@ -398,7 +410,7 @@ const addInsideRoomAddId2 = () => {
 
     cart.add(roomTwoWithGuestsInfo);
 
-    console.log(document.cookie);
+    // console.log(document.cookie);
 
     $(".not-empty").remove();
     $(".shadow-div").remove();
@@ -417,12 +429,7 @@ const addInsideRoomAddId3 = () => {
 
     $(".div-for-info-rooms").addClass("hidden-border-rooms-in-info");
 
-    // if ($("#info-section").hasClass("info-section-information")) {
-    //   ("");
-    // } else
-    if ($("#info-section").hasClass("info-section-information")) {
-      ("");
-    } else if ($(".div-for-info-rooms div").hasClass("room3-cart-info")) {
+    if ($(".div-for-info-rooms div").hasClass("room3-cart-info")) {
       const roomThreeWithGuestsInfoRemove = JSON.parse(
         JSON.stringify(database.rooms[2])
       );
@@ -497,7 +504,7 @@ const addInsideRoomAddId3 = () => {
 
     cart.add(roomThreeWithGuestsInfo);
 
-    console.log(document.cookie);
+    // console.log(document.cookie);
 
     $(".not-empty").remove();
     $(".shadow-div").remove();
@@ -516,12 +523,7 @@ const addInsideRoomAddId4 = () => {
 
     $(".div-for-info-rooms").addClass("hidden-border-rooms-in-info");
 
-    // if ($("#info-section").hasClass("info-section-information")) {
-    //   ("");
-    // } else
-    if ($("#info-section").hasClass("info-section-information")) {
-      ("");
-    } else if ($(".div-for-info-rooms div").hasClass("room4-cart-info")) {
+    if ($(".div-for-info-rooms div").hasClass("room4-cart-info")) {
       const roomFourWithGuestsInfoRemove = JSON.parse(
         JSON.stringify(database.rooms[3])
       );
@@ -596,7 +598,7 @@ const addInsideRoomAddId4 = () => {
 
     cart.add(roomFourWithGuestsInfo);
 
-    console.log(document.cookie);
+    // console.log(document.cookie);
 
     $(".not-empty").remove();
     $(".shadow-div").remove();
@@ -610,6 +612,7 @@ const addInsideRoomAddId4 = () => {
 const cancelInsideRoomAddId1 = () => {
   $(".button-remove-id1").click((e) => {
     e.stopPropagation();
+
     $("#rooms-container div.room").addClass("room-hover-shadow");
     $(".not-empty").remove();
     $(".shadow-div").remove();
@@ -651,7 +654,7 @@ const cancelInsideRoomAddId1 = () => {
 const cancelInsideRoomAddId2 = () => {
   $(".button-remove-id2").click((e) => {
     e.stopPropagation();
-    // console.log($(".div-for-info2").html().length);
+
     $("#rooms-container div.room").addClass("room-hover-shadow");
     $(".not-empty").remove();
     $(".shadow-div").remove();
@@ -683,11 +686,6 @@ const cancelInsideRoomAddId2 = () => {
         $(`.button-add-room${i + 1}`).addClass("all-add-buttons-hover");
         $(`.button-remove-room${i + 1}`).removeAttr("disabled", true);
         $(`.button-remove-room${i + 1}`).addClass("all-remove-buttons-hover");
-        // } else if (
-        //   $(`.room-guests-value${i + 1}`).text() === 0 &&
-        //   $(`.room-guests-value${i + 1}`).text() !== database.rooms[i].guests
-        // ) {
-        //   console.log("zero");
       } else {
         ("");
       }
@@ -698,7 +696,7 @@ const cancelInsideRoomAddId2 = () => {
 const cancelInsideRoomAddId3 = () => {
   $(".button-remove-id3").click((e) => {
     e.stopPropagation();
-    // console.log($(".div-for-info3").html().length);
+
     $("#rooms-container div.room").addClass("room-hover-shadow");
     $(".not-empty").remove();
     $(".shadow-div").remove();
@@ -730,11 +728,6 @@ const cancelInsideRoomAddId3 = () => {
         $(`.button-add-room${i + 1}`).addClass("all-add-buttons-hover");
         $(`.button-remove-room${i + 1}`).removeAttr("disabled", true);
         $(`.button-remove-room${i + 1}`).addClass("all-remove-buttons-hover");
-        // } else if (
-        //   $(`.room-guests-value${i + 1}`).text() === 0 &&
-        //   $(`.room-guests-value${i + 1}`).text() !== database.rooms[i].guests
-        // ) {
-        //   console.log("zero");
       } else {
         ("");
       }
@@ -745,6 +738,7 @@ const cancelInsideRoomAddId3 = () => {
 const cancelInsideRoomAddId4 = () => {
   $(".button-remove-id4").click((e) => {
     e.stopPropagation();
+
     $("#rooms-container div.room").addClass("room-hover-shadow");
     $(".not-empty").remove();
     $(".shadow-div").remove();
@@ -776,11 +770,6 @@ const cancelInsideRoomAddId4 = () => {
         $(`.button-add-room${i + 1}`).addClass("all-add-buttons-hover");
         $(`.button-remove-room${i + 1}`).removeAttr("disabled", true);
         $(`.button-remove-room${i + 1}`).addClass("all-remove-buttons-hover");
-        // } else if (
-        //   $(`.room-guests-value${i + 1}`).text() === 0 &&
-        //   $(`.room-guests-value${i + 1}`).text() !== database.rooms[i].guests
-        // ) {
-        //   console.log("zero");
       } else {
         ("");
       }
@@ -1016,6 +1005,9 @@ export const allRoomsDisablesAndHovers = () => {
 // Reload basket graphics
 
 export const room1ReloadInfo = () => {
+  const cookiesRoomsInfo = JSON.parse(JSON.stringify(document.cookie));
+
+  const cookiesGusetsInfo = JSON.parse(cookiesRoomsInfo.slice(12));
   for (let i = 0; cookiesGusetsInfo.length > i; i++) {
     if (
       cookiesGusetsInfo[i].id == 1 &&
@@ -1046,6 +1038,9 @@ export const room1ReloadInfo = () => {
 };
 
 export const room2ReloadInfo = () => {
+  const cookiesRoomsInfo = JSON.parse(JSON.stringify(document.cookie));
+
+  const cookiesGusetsInfo = JSON.parse(cookiesRoomsInfo.slice(12));
   for (let i = 0; cookiesGusetsInfo.length > i; i++) {
     if (
       cookiesGusetsInfo[i].id == 2 &&
@@ -1076,6 +1071,9 @@ export const room2ReloadInfo = () => {
 };
 
 export const room3ReloadInfo = () => {
+  const cookiesRoomsInfo = JSON.parse(JSON.stringify(document.cookie));
+
+  const cookiesGusetsInfo = JSON.parse(cookiesRoomsInfo.slice(12));
   for (let i = 0; cookiesGusetsInfo.length > i; i++) {
     if (
       cookiesGusetsInfo[i].id == 3 &&
@@ -1106,6 +1104,9 @@ export const room3ReloadInfo = () => {
 };
 
 export const room4ReloadInfo = () => {
+  const cookiesRoomsInfo = JSON.parse(JSON.stringify(document.cookie));
+
+  const cookiesGusetsInfo = JSON.parse(cookiesRoomsInfo.slice(12));
   for (let i = 0; cookiesGusetsInfo.length > i; i++) {
     if (
       cookiesGusetsInfo[i].id == 4 &&

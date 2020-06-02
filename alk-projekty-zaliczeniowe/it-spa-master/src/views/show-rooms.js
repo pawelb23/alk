@@ -61,7 +61,7 @@ export const showRooms = () => {
       showOneRoom.append(addMinusRoom);
 
       const buttonRoom = $(
-        `<button class="all-buttons all-add-buttons-hover all-buttons-add-rooms button-add-room${database.rooms[i].id}">Dodaj</button><button class="all-buttons all-buttons-remove-rooms button-remove-room${database.rooms[i].id}">Usuń</button>`
+        `<button class="all-buttons all-add-buttons-hover all-buttons-add-rooms button-add-room${database.rooms[i].id}">Dodaj</button><button class="all-buttons all-buttons-remove-rooms button-remove-room${database.rooms[i].id}" disabled=true>Usuń</button>`
       );
 
       addMinusRoom.append(buttonRoom);
@@ -80,6 +80,7 @@ export const showRooms = () => {
       //   allRoomsContent.roomFourWithChanging.guests
       // );
     }
+    console.log(allRoomsContent.roomOneWithChanging);
   }
 };
 
