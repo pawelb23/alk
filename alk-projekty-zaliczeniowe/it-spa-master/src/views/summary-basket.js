@@ -731,6 +731,17 @@ const removeArrivalDate = () => {
     $(".div-for-info-bookings").empty();
 
     acceptButtonSettings();
+
+    if (
+      $(".div-for-info-rooms").html().length == 0 ||
+      $(".div-for-info-treatments").html().length == 0 ||
+      $(".div-for-info-bookings div").length !== 2
+    ) {
+      $("#info-section").removeClass("main-info-in-section");
+      $(".info-main-heading").remove();
+    } else {
+      ("");
+    }
   });
 };
 
