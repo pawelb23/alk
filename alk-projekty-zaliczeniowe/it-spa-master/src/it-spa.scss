@@ -585,7 +585,6 @@ main {
   border: dotted rgba(124, 53, 53, 0.575) 3px;
   display: inline-block;
 }
-// #basket-summary-flex {}
 #basket-summary {
   z-index: 2;
   position: absolute;
@@ -610,6 +609,7 @@ main {
     border: solid black 3px;
   }
   .full-summary-basket-container {
+    min-height: 515px;
     margin: 10px;
     padding: 5px;
     .all-rooms-in-basket {
@@ -727,8 +727,6 @@ main {
       display: flex;
       justify-content: flex-end;
       margin: 25px;
-      // right: 5px;
-      // bottom: 5px;
       .buy-all {
         @include login-registration-summary-buttons-settings;
         background-color: rgba(198, 211, 89, 0.35);
