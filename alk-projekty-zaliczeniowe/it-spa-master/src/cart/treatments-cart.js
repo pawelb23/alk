@@ -6,15 +6,9 @@ const cart = new Cart(); //uruchamiamy klasę kosz
 
 //-----------
 
-// export const pageTreatments = () => {};
-
-//------------
-
 // Cookies Treatmenst Info
 
 const cookiesTreatmentsFullInfo = JSON.parse(JSON.stringify(document.cookie));
-
-// console.log(cookiesTreatmentsFullInfo);
 
 const cookiesTreatmentsInfo = JSON.parse(cookiesTreatmentsFullInfo.slice(12));
 
@@ -386,8 +380,6 @@ export const addTreatment1 = () => {
   $(".button-add-treatment1").click((e) => {
     e.stopPropagation();
 
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
-
     $(".button-remove-treatment1").removeAttr("disabled", true);
 
     $(".button-remove-treatment1").addClass(
@@ -428,8 +420,6 @@ export const addTreatment1 = () => {
 export const addTreatment2 = () => {
   $(".button-add-treatment2").click((e) => {
     e.stopPropagation();
-
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
 
     $(".button-remove-treatment2").removeAttr("disabled", true);
 
@@ -472,8 +462,6 @@ export const addTreatment3 = () => {
   $(".button-add-treatment3").click((e) => {
     e.stopPropagation();
 
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
-
     $(".button-remove-treatment3").removeAttr("disabled", true);
 
     $(".button-remove-treatment3").addClass(
@@ -514,8 +502,6 @@ export const addTreatment3 = () => {
 export const addTreatment4 = () => {
   $(".button-add-treatment4").click((e) => {
     e.stopPropagation();
-
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
 
     $(".button-remove-treatment4").removeAttr("disabled", true);
 
@@ -558,8 +544,6 @@ export const addTreatment5 = () => {
   $(".button-add-treatment5").click((e) => {
     e.stopPropagation();
 
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
-
     $(".button-remove-treatment5").removeAttr("disabled", true);
 
     $(".button-remove-treatment5").addClass(
@@ -601,8 +585,6 @@ export const addTreatment6 = () => {
   $(".button-add-treatment6").click((e) => {
     e.stopPropagation();
 
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
-
     $(".button-remove-treatment6").removeAttr("disabled", true);
 
     $(".button-remove-treatment6").addClass(
@@ -643,8 +625,6 @@ export const addTreatment6 = () => {
 export const addTreatment7 = () => {
   $(".button-add-treatment7").click((e) => {
     e.stopPropagation();
-
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
 
     $(".button-remove-treatment7").removeAttr("disabled", true);
 
@@ -693,8 +673,6 @@ export const removeTreatment1 = () => {
 
     cart.remove(database.treatments[0]);
 
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
-
     $(".button-remove-treatment1").attr("disabled", true);
 
     $(".button-remove-treatment1").removeClass(
@@ -729,8 +707,6 @@ export const removeTreatment2 = () => {
     e.stopPropagation();
 
     cart.remove(database.treatments[1]);
-
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
 
     $(".button-remove-treatment2").attr("disabled", true);
 
@@ -767,8 +743,6 @@ export const removeTreatment3 = () => {
 
     cart.remove(database.treatments[2]);
 
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
-
     $(".button-remove-treatment3").attr("disabled", true);
 
     $(".button-remove-treatment3").removeClass(
@@ -803,8 +777,6 @@ export const removeTreatment4 = () => {
     e.stopPropagation();
 
     cart.remove(database.treatments[3]);
-
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
 
     $(".button-remove-treatment4").attr("disabled", true);
 
@@ -841,8 +813,6 @@ export const removeTreatment5 = () => {
 
     cart.remove(database.treatments[4]);
 
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
-
     $(".button-remove-treatment5").attr("disabled", true);
 
     $(".button-remove-treatment5").removeClass(
@@ -878,8 +848,6 @@ export const removeTreatment6 = () => {
 
     cart.remove(database.treatments[5]);
 
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
-
     $(".button-remove-treatment6").attr("disabled", true);
 
     $(".button-remove-treatment6").removeClass(
@@ -914,8 +882,6 @@ export const removeTreatment7 = () => {
     e.stopPropagation();
 
     cart.remove(database.treatments[6]);
-
-    //     $(".button-remove-room1").addClass("all-remove-buttons-hover");
 
     $(".button-remove-treatment7").attr("disabled", true);
 

@@ -1,6 +1,5 @@
 "use strict";
 
-import database from "../database.json";
 import "bootstrap/dist/css/bootstrap.css";
 import "./it-spa.scss";
 import $ from "jquery";
@@ -28,26 +27,15 @@ import {
   loginRemove,
   showLoginForm,
 } from "./views";
-// import { Cart } from "./cart/cart.js";
 
-// var finished = () => {
-//   console.log("działa");
-// };
+console.log("Welcome! ---> to my IT SPA Aplication");
 
-// var fs = require("file-system");
-
-// fs.appendFile("../database.json", infoPush, finished());
-
-// var words = fs.readFile("../database.json");
-
-// fs.writeFile("../database.json", infoPush, finished);
-
-// const roomClass = new RoomClass();
+//--------------
 
 const main = $("main");
 
 const router = new Router(routes); //router.js
-// console.log(router); //moje
+
 main.before(nav);
 
 //element main będzie 'outletem' na nasze widoki
@@ -57,12 +45,6 @@ router.init(); //router.js ---> po prostu wywołujemy metodę init() na router z
 //przy uruchomieniu strony pierwszy raz nawigujemy do ścieżki z paska adresu
 
 //----------------
-
-// var oldHref = window.location.href;
-// console.log(oldHref);
-console.log(window.location.origin); //Początkowy adres strony
-
-//-----------------
 
 // Podstrony
 
@@ -93,8 +75,6 @@ allRoomsContent.findCookieRoom3();
 allRoomsContent.findCookieRoom4();
 
 actuallGuestsInfo();
-
-//Podstrona (musi być po findCookieRoom)
 
 //---dodawanie i odejmowanie osób (Rooms)
 
@@ -182,12 +162,9 @@ $(".text-light").on({
       showRegistrationForm();
       showLoginForm();
       registrationLoginHoversOff();
-
-      // allRoomsContent.roomsInfo();
     } else if (window.location.href.match(/\/rooms$/)) {
       $("#main-section").empty();
 
-      console.log(document.cookie);
       showRooms();
 
       allRoomsContent.findCookieRoom1();
@@ -248,33 +225,3 @@ $(".text-light").on({
     }
   },
 });
-
-//------------
-
-// var myInit = {
-//   method: "GET",
-//   headers: {
-//     "Content-Type": "application/json",
-//     Accept: "application/json",
-//   },
-//   mode: "cors",
-//   cache: "default",
-// };
-
-// let myRequest = new Request(
-//   "C:/Users/PB/Desktop/repo-git/projekty-2020/it-spa-master-clone/src/database/database-json.json",
-//   myInit
-// );
-// $.getJSON("./database/database-json.json", (data) => {
-//   console.log(data);
-// });
-// let data = require("../database.json");
-
-// fetch("local").then((response) => {
-//   console.log("działa");
-//   return response.json();
-// });
-//   .then((answer) => console.log(answer));
-// const jsonInfo = $.getJSON(
-//   "C/:UsersPBDesktop/repo-git/projekty-2020/it-spa-master-clone/database.json"
-// );

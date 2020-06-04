@@ -1,4 +1,6 @@
 @import "./scss/mixins.scss";
+@import "./scss/variables.scss";
+
 @import url("https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap");
 
 * {
@@ -54,13 +56,11 @@ nav {
       }
     }
     .welcome-info {
-      color: white;
-      margin: 5px;
+      @include welcome-nickname-info;
       font-size: 15px;
     }
     .nickname-info {
-      color: white;
-      margin: 5px;
+      @include welcome-nickname-info;
       font-size: 25px;
     }
   }
@@ -85,16 +85,12 @@ main {
     }
     .hover-registration {
       &:hover {
-        background-color: rgba(231, 222, 222, 0.85);
-        box-shadow: 5px 5px 5px rgba(199, 193, 193, 0.85);
-        border: solid rgb(131, 124, 124) 5px;
+        @include registration-login-hover-settings;
       }
     }
     .hover-login {
       &:hover {
-        background-color: rgba(231, 222, 222, 0.85);
-        box-shadow: 5px 5px 5px rgba(199, 193, 193, 0.85);
-        border: solid rgb(131, 124, 124) 5px;
+        @include registration-login-hover-settings;
       }
     }
   }
@@ -161,11 +157,11 @@ main {
         }
         .email-exist-info {
           position: absolute;
+          right: 0;
+          left: 0;
           color: rgb(195, 23, 23);
           background-color: rgba(255, 255, 255, 0.8);
           font-size: 17px;
-          left: 0;
-          right: 0;
           bottom: 25%;
           width: 100%;
         }
@@ -174,7 +170,7 @@ main {
         }
         .registration-description {
           font-size: 15px;
-          color: rgb(134, 24, 24);
+          color: $dark-red-color;
         }
         #password-power {
           display: flex;
@@ -252,7 +248,7 @@ main {
 
         .login-description {
           font-size: 15px;
-          color: rgb(134, 24, 24);
+          color: $dark-red-color;
         }
         .text-input-login {
           margin: 20px 0 50px 0;
@@ -329,7 +325,7 @@ main {
             .person-input {
               height: 25px;
               width: 50px;
-              background-color: rgba(246, 233, 233, 0.85);
+              background-color: $color-white-with-transparency;
               border-radius: 5px;
               font-size: 15px;
             }
@@ -339,10 +335,10 @@ main {
             }
             .span-for-label-warning {
               font-size: 15px;
-              color: rgb(134, 24, 24);
+              color: $dark-red-color;
             }
             .add-person-button {
-              background-color: rgba(246, 233, 233, 0.85);
+              background-color: $color-white-with-transparency;
               @include button-inside-input;
             }
             .remove-person-button {
@@ -420,12 +416,7 @@ main {
   // BOOKINGS
 
   #bookings-container {
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: center;
     .arrival-date-container {
-      // width: 1000px;
-      // border: solid rgba(77, 36, 36, 0.575) 3px;
       .arrival-info {
         .arrival-heading-info {
           cursor: text;
@@ -435,7 +426,7 @@ main {
           margin-bottom: 10px;
           .input-arrival-error {
             @include login-and-arrival-departure-error;
-            color: rgb(211, 32, 32);
+            color: $orange-red-mix;
           }
         }
       }
@@ -450,7 +441,7 @@ main {
           @include submit-arrival-departure-add-cancel;
           margin: 15px;
           &:hover {
-            box-shadow: inset 0 0 50px rgba(135, 173, 199, 0.315);
+            box-shadow: $light-blue-box-shadow;
           }
         }
       }
@@ -458,7 +449,7 @@ main {
         display: inline-block;
         .hidden-cancel-arrival-date {
           &:hover {
-            box-shadow: inset 0 0 50px rgba(135, 173, 199, 0.315);
+            box-shadow: $light-blue-box-shadow;
           }
         }
         .cancel-arrival-click {
@@ -467,8 +458,6 @@ main {
       }
     }
     .departure-date-container {
-      // width: 1000px;
-      // border: solid rgba(77, 36, 36, 0.575) 3px;
       .departure-info {
         .departure-heading-info {
           cursor: text;
@@ -478,7 +467,7 @@ main {
           margin-bottom: 10px;
           .input-departure-error {
             @include login-and-arrival-departure-error;
-            color: rgb(211, 32, 32);
+            color: $orange-red-mix;
           }
         }
       }
@@ -495,7 +484,7 @@ main {
         }
         .hidden-departure-date-hover {
           &:hover {
-            box-shadow: inset 0 0 50px rgba(135, 173, 199, 0.315);
+            box-shadow: $light-blue-box-shadow;
           }
         }
       }
@@ -503,7 +492,7 @@ main {
         display: inline-block;
         .hidden-cancel-departure-date {
           &:hover {
-            box-shadow: inset 0 0 50px rgba(135, 173, 199, 0.315);
+            box-shadow: $light-blue-box-shadow;
           }
         }
         .cancel-departure-click {
@@ -538,6 +527,8 @@ main {
     }
   }
 }
+
+// Shopping Info
 
 #info-section {
   max-width: 30%;
@@ -585,6 +576,9 @@ main {
   border: dotted rgba(124, 53, 53, 0.575) 3px;
   display: inline-block;
 }
+
+// Card summary
+
 #basket-summary {
   z-index: 2;
   position: absolute;
@@ -594,7 +588,7 @@ main {
   left: 0;
   bottom: 0;
   border-radius: 5px;
-  border: solid black 3px;
+  border: $border-solid-black-3px;
   text-align: center;
   max-height: 750px;
   width: 1000px;
@@ -606,7 +600,7 @@ main {
     border-bottom: double black 2px;
   }
   .border-summary-basket {
-    border: solid black 3px;
+    border: $border-solid-black-3px;
   }
   .full-summary-basket-container {
     min-height: 515px;
@@ -618,7 +612,7 @@ main {
         display: flex;
         padding-bottom: 15px;
         margin: 15px;
-        border-bottom: dotted black 1px;
+        border-bottom: $border-dotted-black;
         justify-content: space-around;
         .all-rooms-settings-in-basket {
           width: 50%;
@@ -634,8 +628,7 @@ main {
           .remove-single-choice-from-basket {
             @include login-registration-summary-buttons-settings;
             &:hover {
-              background-color: rgba(236, 204, 204, 0.75);
-              box-shadow: 5px 5px 5px rgba(77, 50, 50, 0.65);
+              @include remove-basket-hover-buttons;
             }
           }
         }
@@ -647,7 +640,7 @@ main {
         display: flex;
         padding-bottom: 15px;
         margin: 15px;
-        border-bottom: dotted black 1px;
+        border-bottom: $border-dotted-black;
         justify-content: space-around;
         .all-treatments-settings-in-basket {
           width: 50%;
@@ -663,8 +656,7 @@ main {
           .remove-single-choice-from-basket {
             @include login-registration-summary-buttons-settings;
             &:hover {
-              background-color: rgba(236, 204, 204, 0.75);
-              box-shadow: 5px 5px 5px rgba(77, 50, 50, 0.65);
+              @include remove-basket-hover-buttons;
             }
           }
         }
@@ -676,7 +668,7 @@ main {
         display: flex;
         padding-bottom: 15px;
         margin: 15px;
-        border-bottom: dotted black 1px;
+        border-bottom: $border-dotted-black;
         justify-content: space-around;
         align-items: center;
         .all-dates-settings-in-basket {
@@ -693,8 +685,7 @@ main {
           .remove-single-choice-from-basket {
             @include login-registration-summary-buttons-settings;
             &:hover {
-              background-color: rgba(236, 204, 204, 0.75);
-              box-shadow: 5px 5px 5px rgba(77, 50, 50, 0.65);
+              @include remove-basket-hover-buttons;
             }
           }
         }
@@ -704,9 +695,6 @@ main {
   .flex-for-cost-and-buttons {
     display: flex;
     justify-content: space-between;
-    margin: 0;
-    padding: 0;
-
     .sum-price-div {
       width: 50%;
       display: flex;
@@ -730,31 +718,35 @@ main {
       .buy-all {
         @include login-registration-summary-buttons-settings;
         background-color: rgba(198, 211, 89, 0.35);
-        margin: 0 25px 0 25px;
+        margin: $margin-0-25px;
       }
       .hover-buy-all-button {
         &:hover {
-          background-color: rgba(236, 204, 204, 0.75);
-          box-shadow: 5px 5px 5px rgba(77, 50, 50, 0.65);
+          background-color: rgba(142, 209, 79, 0.75);
+          box-shadow: 5px 5px 5px rgba(96, 167, 16, 0.7);
         }
       }
       .close-summary-card {
         @include login-registration-summary-buttons-settings;
-        margin: 0 25px 0 25px;
+        margin: $margin-0-25px;
         &:hover {
-          background-color: rgba(236, 204, 204, 0.75);
-          box-shadow: 5px 5px 5px rgba(77, 50, 50, 0.65);
+          background-color: $light-cream-color;
+          box-shadow: 5px 5px 5px rgba(114, 63, 63, 0.7);
         }
       }
     }
   }
 }
 
+// Footer
+
 .text-muted {
   text-align: center;
   padding: 60px;
   bottom: 5px;
 }
+
+// Shadow Div
 
 .shadow-div {
   z-index: 1;

@@ -9,8 +9,6 @@ export const showSummary = () => {
   $(".button-basket-summary").click((e) => {
     e.stopPropagation();
 
-    console.log(document.cookie);
-
     const showAllSummary = $(
       `<section id="basket-summary"><h3 class="heading-summary">Podsumowanie wyboru z oferty naszego SPA!!!</h3><div class="full-summary-basket-container border-summary-basket"><div class="all-rooms-in-basket"></div><div class="all-treatments-in-basket"></div><div class="all-dates-in-basket"><div class="all-dates-flex arrival-choice"><div class="all-dates-settings-in-basket all-arrival-info"><span class="date-key">Data przyjazdu:</span> <span class="date-value arrival-value"></span></div><div class="single-button-remove"><button class="remove-single-choice-from-basket remove-item-arrival">Usuń</button></div></div><div class="all-dates-flex departure-choice"><div class="all-dates-settings-in-basket all-departure-info"><span class="date-key">Data wyjazdu ze:</span> <span class="date-value departure-value"></span></div><div class="single-button-remove"><button class="remove-single-choice-from-basket remove-item-departure">Usuń</button></div></div></div></div><div class="flex-for-cost-and-buttons"><div class="sum-price-div"><span class="sum-price-info">Całkowity koszt:</span><span class="full-cost"></span></div><div class="buttons-buy-cancel"><button class="buy-all hover-buy-all-button">Akceptuję!</button><button class="close-summary-card">Powrót</button></div></div></section>`
     );
@@ -28,7 +26,6 @@ export const showSummary = () => {
 
     for (let i = 0; cookieForBasketInfo.length > i; i++) {
       if (cookieForBasketInfo[i].hasOwnProperty("guests")) {
-        console.log(cookieForBasketInfo[i]);
         const oneRoomInfo = $(`<div class="all-rooms-flex room${
           cookieForBasketInfo[i].id
         }-choice"><div class="all-rooms-settings-in-basket all-room${
@@ -131,10 +128,6 @@ export const showSummary = () => {
     closeCardSummary();
 
     addingPrice();
-
-    // console.log(cookieForBasketInfo);
-
-    // console.log(document.cookie);
   });
 };
 
@@ -202,10 +195,6 @@ const removeRoomId1Summary = () => {
       database.rooms[0].guests - allRoomsContent.roomOneWithChanging.guests;
 
     roomOneWithGuestsInfo.guests = guestsNumber1;
-
-    console.log(roomOneWithGuestsInfo);
-
-    console.log(allRoomsContent.roomOneWithChanging);
 
     cart.remove(roomOneWithGuestsInfo);
 
@@ -856,8 +845,6 @@ export const closeCardSummary = () => {
 
 const addingPrice = () => {
   const sumAllPrice = $(".price-add");
-
-  console.log(sumAllPrice.length);
 
   //---------
 

@@ -9,11 +9,7 @@ const cart = new Cart(); //ciastko do logowania
 
 let allCookiesInfo = JSON.parse(JSON.stringify(document.cookie));
 
-// console.log(cookiesRoomsInfo);
-
 let cookieForLoginInfo = JSON.parse(allCookiesInfo.slice(12));
-
-console.log(cookieForLoginInfo);
 
 export const findCookieLogin = () => {
   for (let i = 0; cookieForLoginInfo.length > i; i++) {
@@ -89,31 +85,6 @@ export const showLoginForm = () => {
           '<span class="login-error">Oops!... Błędne dane logowania!!! Spróbuj jeszcze raz!</span>'
         );
 
-        // var emailValue = emailInput.val();
-
-        // const registrationObject = {
-        //   login: loginValue,
-        //   password: passwordValue,
-        //   eamil: emailValue,
-        // };
-
-        // database.users.push(registrationObject);
-
-        // var finished = () => {
-        //   console.log("działa");
-        // };
-
-        // var fs = require("fs");
-
-        // fs.appendFile(
-        //   "http://localhost:1234/database.json",
-        //   registrationObject,
-        //   finished()
-        // );
-
-        console.log(database.users[0].password);
-        console.log(loginValue);
-
         for (let i = 0; database.users.length > i; i++) {
           if (
             (loginValue == database.users[i].login ||
@@ -172,8 +143,6 @@ export const loginRemove = () => {
 
     let allCurrentCookiesInfo = JSON.parse(JSON.stringify(document.cookie));
 
-    // console.log(cookiesRoomsInfo);
-
     let currentcookieForRemoveLoginInfo = JSON.parse(
       allCurrentCookiesInfo.slice(12)
     );
@@ -195,7 +164,6 @@ export const loginRemove = () => {
         currentcookieForRemoveLoginInfo[i].hasOwnProperty("email")
       ) {
         cart.remove(currentcookieForRemoveLoginInfo[i]);
-        // console.log(currentcookieForRemoveLoginInfo[i]);
       } else {
         ("");
       }

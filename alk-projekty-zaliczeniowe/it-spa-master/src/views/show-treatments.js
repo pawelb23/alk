@@ -1,28 +1,11 @@
 import database from "../../database.json";
 import $ from "jquery";
-// import { treatments } from "../views/treatments";
-// import { Router, routes } from "../router";
-// import * as allFile from "../it-spa";
 
 export const showTreatments = () => {
   if (window.location.href.match(/\/treatments$/)) {
-    // const fragment = $(new DocumentFragment());
     const showAllTreatments = $('<div id="treatments-container"></div>'); //kod utworzy nowy element div z tekstem Hello World! i doda go do elementu body strony.
 
     $("#main-section").append(showAllTreatments);
-
-    // let allTreatmentsForArea = database.treatments;
-
-    // const polishAreaName = allTreatmentsForArea.map((allTreatmentsForArea) => {
-    //   console.log(allTreatmentsForArea.area);
-    //   if (allTreatmentsForArea === "back") {
-    //     return "Plecy";
-    //   } else {
-    //     return "coś innego";
-    //   }
-    // });
-
-    // showMePolishAreaName;
 
     for (let i = 0; database.treatments.length > i; i++) {
       let polishAreaName;
@@ -68,19 +51,5 @@ export const showTreatments = () => {
 
       $(".all-buttons-remove-treatments").attr("disabled", true);
     }
-
-    // showAlltreatments.text(databaseParse.treatments[0].id);
-    // showAlltreatments.text(
-
-    // );
-    // console.log("działa");
-
-    // return fragment;
   }
 };
-
-// console.log(window.location.href);
-
-// console.log($("body").has("main"));
-
-// console.log(document.body.querySelector("main"));

@@ -32,10 +32,6 @@ export const showRegistrationForm = () => {
 
     let passwordInput = $(".password-input");
 
-    // var passwAll = passwordInput.val();
-
-    // var signCheck = 0;
-
     function checkPassword(passwordKey) {
       if (passwordInput.val().length > 3) {
         $(".div-three-colors :first-child").addClass("orange-color");
@@ -109,7 +105,6 @@ export const showRegistrationForm = () => {
           `<span class="email-exist-info span-login-exist-info">*Podany email istnieje już w naszej bazie danych!!! Przejdź do zakładki logowania!!!</span>`
         );
 
-        // console.log(emailValue);
         for (let i = 0; database.users.length > i; i++) {
           if (emailValue == database.users[i].email) {
             if ($(".email-exist-info").hasClass("span-login-exist-info")) {
@@ -125,29 +120,7 @@ export const showRegistrationForm = () => {
               email: emailValue,
             };
 
-            // document.cookie = "name" + "=" + "login" + ";";
-
-            // let registrationObjectStringify = JSON.stringify(
-            //   registrationObject
-            // );
-
-            // database.users.push(registrationObjectStringify);
-
             cart.add(registrationObject);
-
-            // console.log(registrationObject);
-
-            // var finished = () => {
-            //   console.log("działa");
-            // };
-
-            // var fs = require("fs");
-
-            // fs.appendFile(
-            //   "http://localhost:1234/database.json",
-            //   registrationObject,
-            //   finished()
-            // );
 
             $(".div-form-registration").remove();
             shadowDiv.remove();
@@ -174,8 +147,6 @@ export const showRegistrationForm = () => {
     passwordInput.on({
       keyup: function (keyPush) {
         //warto używać zdarzenia keyup --- najlepiej działa
-
-        // var passwordValue = passwordInput.val();
 
         if (keyPush) {
           checkPassword($(this).val()); //ten sam zapis --> checkPassword(passwordInput.val();

@@ -6,16 +6,6 @@ const cart = new Cart(); //uruchamiamy klasę kosz
 
 //-----------
 
-// let roomWithChanging = [];
-
-// export const roomsInfo = () => {
-//   for (let i = 0; database.rooms.length > i; i++) {
-//     let roomWithChanging = JSON.parse(JSON.stringify(database.rooms[i]));
-
-//     console.log(roomWithChanging);
-//   }
-// };
-
 export let roomOneWithChanging = {};
 
 export let roomTwoWithChanging = {};
@@ -39,10 +29,6 @@ const textInfoRoom4 = `Dodano: ${database.rooms[3].name}!!!`;
 //-----------
 
 // Cookies Rooms Info
-
-// const cookiesRoomsInfo = JSON.parse(JSON.stringify(document.cookie));
-
-// const cookiesGusetsInfo = JSON.parse(cookiesRoomsInfo.slice(12));
 
 export const findCookieRoom1 = () => {
   roomOneWithChanging = JSON.parse(JSON.stringify(database.rooms[0]));
@@ -144,7 +130,9 @@ export const roomId1Add = () => {
     } else {
       $(".add-remove-room-id1").append(personNumber1);
       $(".person-form").addClass("form-shadow");
+
       addInsideRoomAddId1();
+
       cancelInsideRoomAddId1();
     }
   });
@@ -169,7 +157,9 @@ export const roomId2Add = () => {
     } else {
       $(".add-remove-room-id2").append(personNumber2);
       $(".person-form").addClass("form-shadow");
+
       addInsideRoomAddId2();
+
       cancelInsideRoomAddId2();
     }
   });
@@ -194,7 +184,9 @@ export const roomId3Add = () => {
     } else {
       $(".add-remove-room-id3").append(personNumber3);
       $(".person-form").addClass("form-shadow");
+
       addInsideRoomAddId3();
+
       cancelInsideRoomAddId3();
     }
   });
@@ -219,7 +211,9 @@ export const roomId4Add = () => {
     } else {
       $(".add-remove-room-id4").append(personNumber4);
       $(".person-form").addClass("form-shadow");
+
       addInsideRoomAddId4();
+
       cancelInsideRoomAddId4();
     }
   });
@@ -316,8 +310,6 @@ const addInsideRoomAddId1 = () => {
 
     cart.add(roomOneWithGuestsInfo);
 
-    // console.log(document.cookie);
-
     $(".not-empty").remove();
     $(".shadow-div").remove();
   });
@@ -409,8 +401,6 @@ const addInsideRoomAddId2 = () => {
     roomTwoWithGuestsInfo.guests = guestsNumber2;
 
     cart.add(roomTwoWithGuestsInfo);
-
-    // console.log(document.cookie);
 
     $(".not-empty").remove();
     $(".shadow-div").remove();
@@ -504,8 +494,6 @@ const addInsideRoomAddId3 = () => {
 
     cart.add(roomThreeWithGuestsInfo);
 
-    // console.log(document.cookie);
-
     $(".not-empty").remove();
     $(".shadow-div").remove();
   });
@@ -597,8 +585,6 @@ const addInsideRoomAddId4 = () => {
     roomFourWithGuestsInfo.guests = guestsNumber4;
 
     cart.add(roomFourWithGuestsInfo);
-
-    // console.log(document.cookie);
 
     $(".not-empty").remove();
     $(".shadow-div").remove();

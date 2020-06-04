@@ -1,5 +1,4 @@
 import $ from "jquery";
-import { home, rooms, treatments, bookings } from "../views";
 import { routes } from "../router";
 import { navItem } from "./nav-item";
 
