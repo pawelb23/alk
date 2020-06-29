@@ -100,6 +100,12 @@ export const arrivalClick = () => {
 
       $(".click-departure").addClass("hidden-departure-date-hover");
 
+      //================
+
+      $("#input-departure-date").addClass("hidden-input-departure-date-hover");
+
+      //================
+
       //----------
 
       // One day
@@ -223,6 +229,8 @@ export const cancelArrivalClick = () => {
     //Hiden class input
 
     $(".cancel-arrival-click").removeClass("hidden-cancel-arrival-date");
+
+    $("#input-departure-date").removeClass("hidden-input-departure-date-hover");
 
     $(".click-departure").removeClass("hidden-departure-date-hover");
 
@@ -349,6 +357,8 @@ export const currentArrivalDepartureDateInfo = () => {
 
     $(".cancel-arrival-click").addClass("hidden-cancel-arrival-date");
 
+    $("#input-departure-date").addClass("hidden-input-departure-date-hover");
+
     $(".click-departure").addClass("hidden-departure-date-hover");
     $(".cancel-departure-click").addClass("hidden-cancel-departure-date");
   } else if ($(".div-for-info-bookings div").hasClass("arrival-cart-info")) {
@@ -357,6 +367,9 @@ export const currentArrivalDepartureDateInfo = () => {
     $(".click-departure").removeAttr("disabled", true);
 
     $(".cancel-arrival-click").addClass("hidden-cancel-arrival-date");
+
+    $("#input-departure-date").addClass("hidden-input-departure-date-hover");
+
     $(".click-departure").addClass("hidden-departure-date-hover");
   }
 };

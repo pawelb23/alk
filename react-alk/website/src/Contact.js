@@ -5,3 +5,16 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// export const Button = (props) => {
+//   return (
+//     <button onClick={() => props.update(`New app name ${Date.now()} `)}>
+//       update
+//     </button>
+//   );
+// };
+// {
+//   <Button update={this.update.bind(this)} />;
+// }
+
+// export default Button;

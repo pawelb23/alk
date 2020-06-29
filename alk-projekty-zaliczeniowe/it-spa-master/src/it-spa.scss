@@ -106,6 +106,7 @@ main {
   // HOME
 
   #home-container {
+    cursor: auto;
     height: 475px;
     .picture {
       background-image: url(./assets/pictures/flower-spa.jpg);
@@ -416,6 +417,7 @@ main {
   // BOOKINGS
 
   #bookings-container {
+    cursor: auto;
     .arrival-date-container {
       .arrival-info {
         .arrival-heading-info {
@@ -436,6 +438,9 @@ main {
           @include all-inputs-registration-login-settings;
           padding: 0;
           width: 350px;
+          &:hover {
+            box-shadow: $input-arrival-departure-box-shadow-hover;
+          }
         }
         .click-arrival {
           @include submit-arrival-departure-add-cancel;
@@ -473,6 +478,11 @@ main {
       }
       .departure-div {
         display: inline-block;
+        .hidden-input-departure-date-hover {
+          &:hover {
+            box-shadow: $input-arrival-departure-box-shadow-hover;
+          }
+        }
         #input-departure-date {
           @include all-inputs-registration-login-settings;
           padding: 0;

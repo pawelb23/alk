@@ -712,6 +712,8 @@ const removeArrivalDate = () => {
 
     $(".cancel-arrival-click").removeClass("hidden-cancel-arrival-date");
 
+    $("#input-departure-date").removeClass("hidden-input-departure-date-hover");
+
     $(".click-departure").removeClass("hidden-departure-date-hover");
 
     $(".cancel-departure-click").removeClass("hidden-cancel-departure-date");
@@ -819,6 +821,31 @@ export const buyAllSummary = () => {
 
     $(".button-basket-summary").attr("disabled", true);
     $(".button-basket-summary").removeClass("hover-button-summary");
+
+    //=======================
+
+    // Add Disabled Departure
+
+    $(".cancel-arrival-click").attr("disabled", true);
+    $("#input-departure-date").attr("disabled", true);
+    $(".click-departure").attr("disabled", true);
+    $(".cancel-departure-click").attr("disabled", true);
+
+    //Hiden class input
+
+    $(".cancel-arrival-click").removeClass("hidden-cancel-arrival-date");
+
+    $("#input-departure-date").removeClass("hidden-input-departure-date-hover");
+
+    $(".click-departure").removeClass("hidden-departure-date-hover");
+
+    $(".cancel-departure-click").removeClass("hidden-cancel-departure-date");
+
+    $(".div-for-info-bookings").removeClass("hidden-border-bookings-in-info");
+
+    $(".div-for-info-bookings").empty();
+
+    //=======================
   });
 };
 

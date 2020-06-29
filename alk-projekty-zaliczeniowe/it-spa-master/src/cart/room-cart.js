@@ -149,7 +149,7 @@ export const roomId2Add = () => {
     $(".all-buttons").attr("disabled", "true");
 
     const personNumber2 = $(
-      `<div class="not-empty"><div class="person-form form-id2"><input id="id2-for-label" class="person-input" value="1" type="number" min="1" max="${roomTwoWithChanging.guests}"></input> <label class="label-warning" for="id2-for-label">Liczba osób</label> <span class="span-for-label-warning">(UWAGA! Nie może<br>przekroczyć ilości wolnych miejsc)</span><button class="add-person-button button-add-id2">Zatwierdź</button><button class="remove-person-button button-remove-id2">Anuluj</button></div></div>`
+      `<div class="not-empty"><div class="person-form form-id2"><input id="id2-for-label" class="person-input" value="1" type="number" min="1" max="${roomTwoWithChanging.guests}"></input> <label class="label-warning" for="id2-for-label">Liczba osób</label> <span class="span-for-label-warning">(*Nie może ona przekroczyć<br>ilości wolnych miejsc)</span><button class="add-person-button button-add-id2">Zatwierdź</button><button class="remove-person-button button-remove-id2">Anuluj</button></div></div>`
     );
 
     if ($("div").hasClass("not-empty")) {

@@ -1,14 +1,10 @@
 {
   "users": [
     {
-      "password": "aB123",
-      "login": "Mieciu",
-      "email": "abc@gmail.com"
-    },
-    {
-      "password": "aB12345",
-      "login": "Jaro",
-      "email": "abcd@gmail.com"
+      "login": "abc",
+      "password": "abcd",
+      "email": "abc@ab.com",
+      "id": 1
     }
   ],
   "rooms": [

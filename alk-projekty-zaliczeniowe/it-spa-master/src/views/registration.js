@@ -120,6 +120,22 @@ export const showRegistrationForm = () => {
               email: emailValue,
             };
 
+            //--------------
+
+            // console.warn(registrationObject);
+
+            fetch("http://localhost:3000/users", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(registrationObject),
+            }).then((response) => {
+              console.log(response.body);
+            });
+
+            //--------------
+
             cart.add(registrationObject);
 
             $(".div-form-registration").remove();
