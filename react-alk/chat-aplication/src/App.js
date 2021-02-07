@@ -45,7 +45,7 @@ const Home = () => {
               color: red;
             `}
           >
-            Przejdź dalej >
+            Przejdź dalej
           </HyperLink>
         </Link>
       </Box>
