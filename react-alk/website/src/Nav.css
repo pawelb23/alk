@@ -1,0 +1,16 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid black;
+  background-color: rgba(128, 128, 128, 0.507);
+}
+
+ul li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.active {
+  color: green;
+}

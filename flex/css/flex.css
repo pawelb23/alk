@@ -1,0 +1,48 @@
+body {
+  display: flex;
+  /*Domyślne ustawienie dla flexa:
+    flex-direction: row;
+    flex-wrap: nowrap; */
+
+  /*    flex-direction: row-reverse;*/
+  /*    flex-wrap: wrap;*/
+  flex-wrap: nowrap;
+  /*    justify-content: flex-end;*/
+  /*    justify-content: space-between;*/
+  /*    justify-content: space-around;*/
+  /*    justify-content: space-evenly;*/
+  justify-content: center;
+  /*    align-content: flex-start;*/
+  /*    align-content: flex-end;*/
+  /*    align-content: flex-start;*/
+  flex-basis: 200px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-basis: 200px;
+  flex-shrink: 1;
+  /*    flex-grow: 0;*/
+  /*    transition: flex-grow 0.3s ease-in-out;*/
+  transition: flex-shrink 0.3s ease-in-out;
+
+  order: 3;
+
+  /*        flex: 1 0 200px; flex grow,flex shrink, flex basis - skrócony zapis */
+}
+
+/* .card:hover {
+  flex-grow: 1;
+  flex-grow: 0.5;
+} */
+
+.card:nth-child(5):hover {
+  flex-shrink: 2;
+}
+
+.card:nth-child(2) {
+  flex-shrink: 0;
+  order: 1;
+}

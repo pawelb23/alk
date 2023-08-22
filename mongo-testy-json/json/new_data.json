@@ -1,0 +1,22 @@
+{
+    "imie": "Marcin",
+    "nazwisko": "Dłubis",
+    "nrIndeksu": "123",
+    "oceny": [
+        6, 6, 6, 6, 6
+    ]
+} {
+    "imie": "Andzej",
+    "nazwisko": "Pluta",
+    "nrIndeksu": "1234",
+    "oceny": [
+        1, 2, 3, 2, 1
+    ]
+} {
+    "imie": "Jan",
+    "nazwisko": "Kowalski",
+    "nrIndeksu": "12345",
+    "oceny": [
+        3, 3, 5, 2, 4
+    ]
+}
