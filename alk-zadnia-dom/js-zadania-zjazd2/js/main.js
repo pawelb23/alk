@@ -8,25 +8,25 @@ var ourWord = "Alfabet";
 
 console.log("Start: " + ourWord);
 
-function reverse(ourString) {
+function reverseWord(ourString) {
   var reverseString = ourString.split("").reverse().join("");
 
   return reverseString;
 }
 
-var newWord = reverse(ourWord);
+var newWord = reverseWord(ourWord);
 
 console.log("Wstecz: " + newWord);
 
 //drugi spsób
 
-function reverseTwo(ourStringTwo) {
+function reverseWordTwo(ourStringTwo) {
   var reverseStringTwo = ourStringTwo.split("").reverse().join("");
 
   console.log("I z powrotem: " + reverseStringTwo);
 }
 
-reverseTwo(newWord);
+reverseWordTwo(newWord);
 
 console.log("");
 //========================================
@@ -46,7 +46,7 @@ function toTitleCase(toChangeSentence) {
   var upLowSentence = [];
 
   for (var i = 0; arraySentence.length > i; i++) {
-    //        console.log(arraySentence.length);
+    // console.log(arraySentence.length);
 
     //        console.log(arraySentence[i]);
 
@@ -158,13 +158,13 @@ function shuffle(arrayToChange) {
 
       var changingArray = ghostArrayToChange[randomNumberForIndeks];
 
-      // randomArray.push(changingArray);
+      randomArray.push(changingArray);
 
       // console.log(randomArray);
 
       //            console.log(changingArray);
 
-      console.log(randomNumberForIndeks);
+      // console.log(randomNumberForIndeks);
 
       ghostArrayToChange.splice(randomNumberForIndeks, 1);
 
