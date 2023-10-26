@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "expo-cli": "^3.21.5",
+    "expo-cli": "^6.3.10",
     "react-native": "^0.62.2"
   }
 }
